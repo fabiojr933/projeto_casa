@@ -1,4 +1,4 @@
-# Sistema desenvolvido para construção da minha casa, controlar os gastos durante cada fase.
+# Sistema desenvolvido para construção da casa, controlar os gastos durante cada fase.
 
 
 *cadastro de fase
