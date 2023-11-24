@@ -26,7 +26,7 @@
                                     $valorTotal += $lancamento->valor;
                                 } ?>
                             <?php } ?> <br>
-                            <a class='btn btn-primary'> R$: <?php echo number_format($valorTotal, 2, ',', '.') ?> </a>
+                            <a class='btn btn-primary'>Total R$: <?php echo number_format($valorTotal, 2, ',', '.') ?> </a>
                         </div>
                     </div><br><br>
                 <?php } ?>

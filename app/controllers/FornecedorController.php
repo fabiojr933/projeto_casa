@@ -8,6 +8,11 @@ use app\models\service\ClienteService;
 class FornecedorController extends Controller{    
 
    public function index(){
+      $senhaAut = $_SESSION['Fox_senha'];
+      $emailAut = $_SESSION['Fox_email'];
+      if ($emailAut == null && $senhaAut == null) {
+         header("location: " . URL_BASE );
+      }
       $tabela = "fornecedor";
       $dados["lista"] = Service::lista($tabela);
       $dados["view"]       = "fornecedor/index";
@@ -15,6 +20,11 @@ class FornecedorController extends Controller{
    }  
 
    public function novo(){
+      $senhaAut = $_SESSION['Fox_senha'];
+      $emailAut = $_SESSION['Fox_email'];
+      if ($emailAut == null && $senhaAut == null) {
+         header("location: " . URL_BASE );
+      }
       $dados["view"]       = "fornecedor/novo";
 	   $this->load("template", $dados);
    } 

@@ -6,14 +6,14 @@ define("SENHA", "");
 define("CHARSET","UTF8");
 
 
-define('CONTROLLER_PADRAO', 'home');
+define('CONTROLLER_PADRAO', 'login');
 define('METODO_PADRAO', 'index');
 define('NAMESPACE_CONTROLLER', 'app\\controllers\\');
-define('TIMEZONE',"America/Fortaleza");
+define('TIMEZONE',"America/Cuiaba");
 define('CAMINHO'            , realpath('./'));
-define("TITULO_SITE","mjailton-ligando vc ao mundo do conhecimento");
+define("TITULO_SITE","Minha minha vida");
 
-define('URL_BASE', 'http://' . $_SERVER["HTTP_HOST"].'/CASA/');
+define('URL_BASE', 'http://' . $_SERVER["HTTP_HOST"].'/projeto_casa/');
 define('URL_IMAGEM', "http://". $_SERVER['HTTP_HOST'] . "/fotos/");
 
 define("SESSION_LOGIN","usuario_agenda_logado");

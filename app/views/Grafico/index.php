@@ -8,7 +8,7 @@
                         <div class="col-sm-6">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">% Fases</h5>
+                                    <h5 class="card-title">% Gastos por Fases</h5>
                                     <div id="piechart" style="width: 100%; height: 300px;"></div>
                                 </div>
                             </div>
@@ -16,11 +16,21 @@
                         <div class="col-sm-6">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">% Fornecedores</h5>
+                                    <h5 class="card-title">% Gastos por Fornecedores</h5>
                                     <div id="piechart2" style="width: 100%; height: 300px;"></div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">% Gastos por Mês</h5>
+                                    <div id="pieMes" style="width: 100%; height: 300px;"></div>
+                                </div>
+                            </div>
+                        </div>                       
                     </div>
                 </div>
             </div>
@@ -89,6 +99,40 @@
 
                 // Criação do gráfico de pizza
                 var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
+
+                // Desenha o gráfico com os dados e opções
+                chart.draw(data, options);
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+                alert('Erro na requisição AJAX. Verifique o console para detalhes.');
+            }
+        });
+    }
+</script>
+
+<script type="text/javascript">
+    google.charts.load('current', {
+        'packages': ['corechart']
+    });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        $.ajax({
+            url: '<?php echo URL_BASE . "grafico/mesGastos" ?>',
+            type: 'GET',
+            dataType: 'JSON',
+            success: function(ajaxData) {
+                // Converte os dados recebidos para o formato adequado do Google Charts
+                var data = google.visualization.arrayToDataTable(ajaxData);
+
+                // Opções do gráfico
+                var options = {
+                   
+                };
+
+                // Criação do gráfico de pizza
+                var chart = new google.visualization.PieChart(document.getElementById('pieMes'));
 
                 // Desenha o gráfico com os dados e opções
                 chart.draw(data, options);

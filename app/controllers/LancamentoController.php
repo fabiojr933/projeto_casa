@@ -11,6 +11,11 @@ class LancamentoController extends Controller
 {
    public function index()
    {
+      $senhaAut = $_SESSION['Fox_senha'];
+      $emailAut = $_SESSION['Fox_email'];
+      if ($emailAut == null && $senhaAut == null) {
+         header("location: " . URL_BASE);
+      }
       $dao = new LancamentoDao();
 
       $dados["lista"] = $dao->listaLancamento();
@@ -21,6 +26,11 @@ class LancamentoController extends Controller
 
    public function novo()
    {
+      $senhaAut = $_SESSION['Fox_senha'];
+      $emailAut = $_SESSION['Fox_email'];
+      if ($emailAut == null && $senhaAut == null) {
+         header("location: " . URL_BASE );
+      }
       $tabela1 = "fase";
       $tabela2 = "pagamento";
       $tabela3 = "fornecedor";
@@ -62,6 +72,11 @@ class LancamentoController extends Controller
 
    public function fase()
    {
+      $senhaAut = $_SESSION['Fox_senha'];
+      $emailAut = $_SESSION['Fox_email'];
+      if ($emailAut == null && $senhaAut == null) {
+         header("location: " . URL_BASE );
+      }
       $tabela1 = "fase";
       $dao = new LancamentoDao();
 
@@ -71,5 +86,4 @@ class LancamentoController extends Controller
       $dados["view"] = "lancamento/fase";
       $this->load("template", $dados);
    }
-  
 }

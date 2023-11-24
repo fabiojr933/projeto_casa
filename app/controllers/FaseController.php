@@ -11,6 +11,11 @@ class FaseController extends Controller
 
    public function index()
    {
+      $senhaAut = $_SESSION['Fox_senha'];
+      $emailAut = $_SESSION['Fox_email'];
+      if ($emailAut == null && $senhaAut == null) {
+         header("location: " . URL_BASE );
+      }
       $tabela = "fase";
       $dados["lista"] = Service::lista($tabela);
       $dados["view"]       = "fase/index";
@@ -19,6 +24,11 @@ class FaseController extends Controller
 
    public function novo()
    {
+      $senhaAut = $_SESSION['Fox_senha'];
+      $emailAut = $_SESSION['Fox_email'];
+      if ($emailAut == null && $senhaAut == null) {
+         header("location: " . URL_BASE );
+      }
       $dados["view"]       = "fase/novo";
       $this->load("template", $dados);
    }

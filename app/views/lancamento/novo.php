@@ -2,9 +2,9 @@
     <section id="facts" class="facts">
         <div class="container">
             <div class="container mt-0">
-            <div class="col-12">
-                <a href="<?php echo URL_BASE . "lancamento/index" ?>" type="submit" class="btn btn-primary">Lista de lancamento</a>
-            </div>
+                <div class="col-12">
+                    <a href="<?php echo URL_BASE . "lancamento/index" ?>" type="submit" class="btn btn-primary">Lista de lancamento</a>
+                </div>
                 <div class="container-fluid px-4">
                     <h2 class="mt-4">Lançamento</h2> <br>
                     <form action="<?php echo URL_BASE . "lancamento/salvar" ?>" method="POST">
@@ -39,7 +39,7 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Valor</label>
-                                    <input type="text" class="form-control" required name="valor" placeholder="Digita o valor">
+                                    <input type="text" class="form-control" required name="valor" id="valor" onkeyup="formatarMoeda();" placeholder="Digita o valor">
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -63,3 +63,21 @@
         </div>
     </section>
 </main>
+
+<script>
+    function formatarMoeda() {
+        var elemento = document.getElementById('valor');
+        var valor = elemento.value;
+
+        valor = valor + '';
+        valor = parseInt(valor.replace(/[\D]+/g, ''));
+        valor = valor + '';
+        valor = valor.replace(/([0-9]{2})$/g, ".$1");
+
+        if (valor.length > 6) {
+            valor = valor.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
+        }
+
+        elemento.value = valor;
+    }
+</script>

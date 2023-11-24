@@ -7,9 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <title>Dashboard - SB Admin</title>
+  <title>Minha casa, minha vida</title>
   <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
-  <link href="<?php echo URL_BASE ?>assets/css/styles.css" rel="stylesheet" />
+  <link href="<?php
+
+ echo URL_BASE ?>assets/css/styles.css" rel="stylesheet" />
   <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -39,16 +41,8 @@
     <script src="<?php echo URL_BASE ?>assets/assets/demo/chart-bar-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
     <script src="<?php echo URL_BASE ?>assets/js/datatables-simple-demo.js"></script>
-
-
-
-
-
    
-
-
-
-
+ 
   </body>
-
+ 
 </html>
